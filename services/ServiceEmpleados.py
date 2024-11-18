@@ -22,6 +22,7 @@ class EmpleadosService:
                 NoEmpleado=empleado.NoEmpleado,
                 Nombre=empleado.Nombre if empleado.Nombre is not None else "Sin nombre",
                 Rol=empleado.Rol or "Desconocido",
+                Departamento=empleado.Departamento or "Desconocido",
             )
             for empleado in empleados
         ]
@@ -39,6 +40,8 @@ class EmpleadosService:
                 empleado.Nombre = update_data.Nombre
             if update_data.Rol is not None:
                 empleado.Rol = update_data.Rol
+            if update_data.Departamento is not None:
+                empleado.Departamento = update_data.Departamento
             if update_data.PasswordEmp is not None:
                 empleado.PasswordEmp = cls._context.hash(update_data.PasswordEmp)
             
@@ -56,7 +59,8 @@ class EmpleadosService:
             return EmpleadosViewResponse(
                 NoEmpleado=value.NoEmpleado,
                 Nombre=value.Nombre,
-                Rol=value.Rol
+                Rol=value.Rol,
+                Departamento=value.Departamento
             )
         return None
 

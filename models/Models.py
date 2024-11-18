@@ -43,7 +43,9 @@ class Empleados(Base):
         self.NoEmpleado = kwargs.get("NoEmpleado")
         self.Nombre = kwargs.get("Nombre")
         self.Rol = kwargs.get("Rol")
+        self.Departamento = kwargs.get("Departamento")
         self.PasswordEmp = kwargs.get("PasswordEmp")
+
 
 
 

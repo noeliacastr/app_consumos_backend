@@ -61,7 +61,8 @@ async def logginForAccessToken(credentials: EmpAutorizado, dbCon: dbSession) -> 
     accessToken = JWTAuthService.createAccessToken(data={
         "sub": str(user.NoEmpleado), 
         "Nombre": user.Nombre, 
-        "Rol": user.Rol})
+        "Rol": user.Rol,
+        "Departamento": user.Departamento})
     return accessToken
 
 @empRoute.get("/active/user", dependencies=[tokenDependency])

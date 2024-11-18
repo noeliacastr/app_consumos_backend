@@ -15,6 +15,7 @@ class EmpleadosValidator(BaseModel):
     NoEmpleado: str | None = None
     Nombre: str
     Rol: str | None = None
+    Departamento: str | None = None
     PasswordEmp: str 
 
 # -------------------------------------------------------------------------
@@ -24,6 +25,7 @@ class EmpleadosViewResponse(BaseModel):
     NoEmpleado: str | None = None
     Nombre: Optional[str]
     Rol: Optional[str]
+    Departamento: Optional[str]
 
 # -------------------------------------------------------------------------
 
@@ -32,6 +34,7 @@ class UpdateEmp(BaseModel):
     NoEmpleado: str | None = None
     Nombre: str | None = None
     Rol: str | None = None
+    Departamento: str | None = None
     PasswordEmp: str | None = None
     
 
@@ -49,5 +52,6 @@ def to_dict(self):
         "NoEmpleado": self.NoEmpleado,
         "Nombre": self.Nombre,
         "Rol": self.Rol,
+        "Departamento": self.Departamento,
         "PasswordEmp": self.PasswordEmp
     }
