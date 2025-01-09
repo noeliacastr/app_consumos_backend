@@ -15,7 +15,6 @@ app = FastAPI()
 # Lista de orígenes permitidos para las solicitudes CORS
 origins = [
     "http://localhost", # Permite solicitudes desde localhost
-    "http://localhost:5173",
     "http://127.0.0.1:8000",
     "http://127.0.0.1:8000/coral/empleados",
     "http://127.0.0.1:8000/coral/empleado/login",
